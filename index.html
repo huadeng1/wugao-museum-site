@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <!--
+      Content-Security-Policy：
+      - 脚本与样式限定本站来源（含 Vite dev 所需内联与 HMR ws）。
+      - 'wasm-unsafe-eval'：DRACO/meshopt 压缩解码与 PDF.js worker 均为 WebAssembly，
+        需要该来源才可编译 WASM（不放开普通 eval）。
+      - 素材允许本站、https 外域、data/blob。
+      - frame-src 允许 https 外域：全景漫游支持把第三方全景作品（如 720yun）用 iframe 嵌入，
+        地址来自 config/museum.json（受信内容）。若不需要该形式，可收紧为具体域名
+        （例如 frame-src 'self' https://720yun.com https://*.720yun.com）。
+      - 禁止插件/嵌入（object-src 'none'），表单仅本站。
+      正式部署时建议在服务器响应头收紧（去掉 unsafe-inline 与 ws:，并补 X-Content-Type-Options 等）。
+    -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; media-src 'self' blob: https:; font-src 'self' data:; connect-src 'self' blob: ws: wss: https:; worker-src 'self' blob:; frame-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self'"
+    />
+    <title>武高所数字博物馆</title>
+    <!-- 内联 SVG 图标：不给浏览器留一个必然 404 的 /favicon.ico（控制台噪音）。 -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23327a74'/%3E%3Ctext x='16' y='23' font-size='19' text-anchor='middle' fill='white' font-family='sans-serif'%3E武%3C/text%3E%3C/svg%3E" />
+    <script type="module" crossorigin src="./assets/index-C--gXHL5.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/rolldown-runtime-hePW80VL.js">
+    <link rel="modulepreload" crossorigin href="./assets/three-engine-BSfwLF8S.js">
+    <link rel="modulepreload" crossorigin href="./assets/pdf-engine-CuLQvmBx.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-CX7lPucp.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

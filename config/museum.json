@@ -1,0 +1,632 @@
+{
+  "version": 1,
+  "site": {
+    "name": "武高所数字博物馆",
+    "defaultRoute": "/map/wugao"
+  },
+  "maps": [
+    {
+      "id": "wugao",
+      "name": "中国电力科学研究院（武汉分院）",
+      "level": "全域视角",
+      "basemap": {
+        "kind": "tiles",
+        "urlTemplate": "https://t0.tianditu.gov.cn/vec_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=vec&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=3b72888c077909edf7ef40e8f3c3b2e4",
+        "overlayTemplate": "https://t0.tianditu.gov.cn/cva_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=cva&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=3b72888c077909edf7ef40e8f3c3b2e4",
+        "attribution": "© 天地图",
+        "minZoom": 10,
+        "maxZoom": 18,
+        "bounds": {
+          "west": 114.172669,
+          "south": 30.38117,
+          "east": 114.642333,
+          "north": 30.694611
+        }
+      },
+      "initialView": {
+        "lng": 114.398972,
+        "lat": 30.509954,
+        "spanMeters": 1408
+      },
+      "description": "武高所（中国电科院武汉分院）位于洪山区珞喻路 143 号。拖动平移，滚轮或双指自由缩放：从洪山区全域一直到院区街区级，点标记进入真实全景漫游。",
+      "points": [
+        {
+          "id": "roam",
+          "label": "中国电力科学研究院（武汉分院）",
+          "description": "进入院区真实全景漫游",
+          "lng": 114.398389,
+          "lat": 30.509407,
+          "target": {
+            "kind": "panorama",
+            "id": "wugao-720yun"
+          }
+        }
+      ]
+    }
+  ],
+  "devices": [
+    {
+      "id": "transformer",
+      "name": "2250kV 工频试验变压器",
+      "summary": "",
+      "poster": "content/image-2250kv-overview-2025-v20260922.jpg",
+      "source": {
+        "kind": "gltf",
+        "url": "content/transformer-2250kv-v20260922b.glb"
+      },
+      "camera": {
+        "position": [
+          26,
+          24,
+          52
+        ],
+        "target": [
+          0,
+          8,
+          0
+        ],
+        "minDistance": 8,
+        "maxDistance": 220
+      },
+      "parts": []
+    },
+    {
+      "id": "generator",
+      "name": "5400kV 冲击电压发生器",
+      "summary": "",
+      "poster": "content/model-generator-5400kv-v20260922.jpg",
+      "source": {
+        "kind": "gltf",
+        "url": "content/generator-5400kv-v20260922b.glb"
+      },
+      "camera": {
+        "position": [
+          14,
+          16,
+          30
+        ],
+        "target": [
+          0,
+          11,
+          0
+        ],
+        "minDistance": 5,
+        "maxDistance": 180
+      },
+      "explosion": {
+        "mode": "grouped",
+        "order": "outside-in",
+        "duration": 9,
+        "layout": "none"
+      },
+      "parts": [
+        {
+          "id": "ring-top",
+          "label": "顶部均压环",
+          "description": "塔顶均压环，用于改善高压端电场分布；拆解时最先摘除。",
+          "nodeNames": [
+            "5400kV冲击电压发生器WK_0002"
+          ],
+          "level": 1,
+          "direction": [
+            0.6,
+            0.75,
+            0
+          ],
+          "distance": 18,
+          "sequence": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "platform-top",
+          "label": "顶部检修平台",
+          "description": "塔顶检修平台（含护栏），是运行与检修时的工作面。",
+          "nodeNames": [
+            "5400kV冲击电压发生器WK_0004"
+          ],
+          "level": 1,
+          "direction": [
+            -0.6,
+            0.75,
+            0
+          ],
+          "distance": 17,
+          "sequence": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "stage-10",
+          "label": "第 10 级",
+          "description": "冲击电压发生器第 10 级塔节：逐级充电、串联放电的一级，塔内 1 ／ 10 层。",
+          "nodeNames": [
+            "5400kV冲击电压发生器10F"
+          ],
+          "level": 2,
+          "direction": [
+            0,
+            1,
+            0
+          ],
+          "distance": 15.9,
+          "sequence": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "stage-9",
+          "label": "第 9 级",
+          "description": "冲击电压发生器第 9 级塔节：逐级充电、串联放电的一级，塔内 2 ／ 10 层。",
+          "nodeNames": [
+            "5400kV冲击电压发生器9F"
+          ],
+          "level": 2,
+          "direction": [
+            0,
+            1,
+            0
+          ],
+          "distance": 14.3,
+          "sequence": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "stage-8",
+          "label": "第 8 级",
+          "description": "冲击电压发生器第 8 级塔节：逐级充电、串联放电的一级，塔内 3 ／ 10 层。",
+          "nodeNames": [
+            "5400kV冲击电压发生器8F"
+          ],
+          "level": 2,
+          "direction": [
+            0,
+            1,
+            0
+          ],
+          "distance": 12.7,
+          "sequence": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "stage-7",
+          "label": "第 7 级",
+          "description": "冲击电压发生器第 7 级塔节：逐级充电、串联放电的一级，塔内 4 ／ 10 层。",
+          "nodeNames": [
+            "5400kV冲击电压发生器7F"
+          ],
+          "level": 2,
+          "direction": [
+            0,
+            1,
+            0
+          ],
+          "distance": 11.1,
+          "sequence": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "stage-6",
+          "label": "第 6 级",
+          "description": "冲击电压发生器第 6 级塔节：逐级充电、串联放电的一级，塔内 5 ／ 10 层。",
+          "nodeNames": [
+            "5400kV冲击电压发生器6F"
+          ],
+          "level": 2,
+          "direction": [
+            0,
+            1,
+            0
+          ],
+          "distance": 9.5,
+          "sequence": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "stage-5",
+          "label": "第 5 级",
+          "description": "冲击电压发生器第 5 级塔节：逐级充电、串联放电的一级，塔内 6 ／ 10 层。",
+          "nodeNames": [
+            "5400kV冲击电压发生器5F"
+          ],
+          "level": 2,
+          "direction": [
+            0,
+            1,
+            0
+          ],
+          "distance": 7.9,
+          "sequence": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "stage-4",
+          "label": "第 4 级",
+          "description": "冲击电压发生器第 4 级塔节：逐级充电、串联放电的一级，塔内 7 ／ 10 层。",
+          "nodeNames": [
+            "5400kV冲击电压发生器4F"
+          ],
+          "level": 2,
+          "direction": [
+            0,
+            1,
+            0
+          ],
+          "distance": 6.3,
+          "sequence": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "stage-3",
+          "label": "第 3 级",
+          "description": "冲击电压发生器第 3 级塔节：逐级充电、串联放电的一级，塔内 8 ／ 10 层。",
+          "nodeNames": [
+            "5400kV冲击电压发生器3F"
+          ],
+          "level": 2,
+          "direction": [
+            0,
+            1,
+            0
+          ],
+          "distance": 4.7,
+          "sequence": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "stage-2",
+          "label": "第 2 级",
+          "description": "冲击电压发生器第 2 级塔节：逐级充电、串联放电的一级，塔内 9 ／ 10 层。",
+          "nodeNames": [
+            "5400kV冲击电压发生器2F"
+          ],
+          "level": 2,
+          "direction": [
+            0,
+            1,
+            0
+          ],
+          "distance": 3.1,
+          "sequence": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "stage-1",
+          "label": "第 1 级",
+          "description": "冲击电压发生器第 1 级塔节：逐级充电、串联放电的一级，塔内 10 ／ 10 层。",
+          "nodeNames": [
+            "5400kV冲击电压发生器1F"
+          ],
+          "level": 2,
+          "direction": [
+            0,
+            1,
+            0
+          ],
+          "distance": 1.5,
+          "sequence": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "frame-cage",
+          "label": "立柱框架",
+          "description": "环绕塔身的立柱框架，为检修提供支撑与安全防护；塔节全部吊出后再整体吊离。",
+          "nodeNames": [
+            "5400kV冲击电压发生器WK_0003"
+          ],
+          "level": 3,
+          "direction": [
+            0.707,
+            0,
+            0.707
+          ],
+          "distance": 20,
+          "sequence": [
+            0,
+            1
+          ]
+        },
+        {
+          "id": "base-ring",
+          "label": "底部基础环",
+          "description": "塔体底部的基础环与地脚，承载整塔，最后拆下。",
+          "nodeNames": [
+            "5400kV冲击电压发生器WK_0001"
+          ],
+          "level": 4,
+          "direction": [
+            -0.6,
+            0.15,
+            -0.75
+          ],
+          "distance": 14,
+          "sequence": [
+            0,
+            1
+          ]
+        }
+      ]
+    }
+  ],
+  "panoramas": [
+    {
+      "id": "wugao-720yun",
+      "name": "中国电力科学研究院（武汉分院）",
+      "embedUrl": "https://www.720yun.com/vr/054je0ka5u7",
+      "description": "院区真实全景漫游（720yun 作品页）。",
+      "hotspots": []
+    }
+  ],
+  "resources": [
+    {
+      "id": "resource-2250kv-install-1980",
+      "title": "2250kV 工频试验成套装置安装过程（1980 年）",
+      "kind": "image",
+      "url": "content/image-2250kv-install-1980-v20260922.jpg",
+      "description": "拍摄于 1980 年的安装过程照片组图，记录了成套装置在现场组立安装的情形。",
+      "source": {
+        "path": "六、附件图片/核心物项/1-2250kV工频试验成套装置安装过程照片组图（拍摄于1980年）.png",
+        "dossier": "六、附件图片"
+      },
+      "period": { "year": 1980, "label": "拍摄于 1980 年" },
+      "eventType": "installation",
+      "about": [{ "kind": "device", "id": "transformer" }],
+      "collectionIds": ["core-items"]
+    },
+    {
+      "id": "resource-2250kv-installed-1981",
+      "title": "2250kV 工频试验成套装置安装完成（1981 年）",
+      "kind": "image",
+      "url": "content/image-2250kv-installed-1981-v20260922.jpg",
+      "description": "拍摄于 1981 年，成套装置安装完成后的现场照片。",
+      "source": {
+        "path": "六、附件图片/核心物项/2-2250kV工频试验成套装置安装完成（拍摄于1981年）.png",
+        "dossier": "六、附件图片"
+      },
+      "period": { "year": 1981, "label": "拍摄于 1981 年" },
+      "eventType": "installation",
+      "about": [{ "kind": "device", "id": "transformer" }],
+      "collectionIds": ["core-items"]
+    },
+    {
+      "id": "resource-2250kv-summer-1999",
+      "title": "夏日的 2250kV 工频试验成套装置（1999 年）",
+      "kind": "image",
+      "url": "content/image-2250kv-summer-1999-v20260922.jpg",
+      "description": "拍摄于 1999 年夏，成套装置在库外试验场运行时期的历史影像。",
+      "source": {
+        "path": "六、附件图片/核心物项/3-夏日的2250kV工频试验成套装置（拍摄于1999年）.png",
+        "dossier": "六、附件图片"
+      },
+      "period": { "year": 1999, "label": "拍摄于 1999 年夏" },
+      "eventType": "operation",
+      "about": [{ "kind": "device", "id": "transformer" }],
+      "collectionIds": ["core-items"]
+    },
+    {
+      "id": "resource-2250kv-overview-2025",
+      "title": "2250kV 工频试验变压器全貌（2025 年）",
+      "kind": "image",
+      "url": "content/image-2250kv-overview-2025-v20260922.jpg",
+      "description": "2025 年拍摄的成套装置全貌，是这台设备当前状态的权威影像。",
+      "source": {
+        "path": "六、附件图片/核心物项/3-2250kV工频试验变压器全貌 (2025年).jpg",
+        "dossier": "六、附件图片"
+      },
+      "period": { "year": 2025, "label": "拍摄于 2025 年" },
+      "eventType": "operation",
+      "about": [{ "kind": "device", "id": "transformer" }],
+      "collectionIds": ["core-items"]
+    },
+    {
+      "id": "resource-drawings-2250kv",
+      "title": "2250kV 工频试验装置图纸（历史档案）",
+      "kind": "pdf",
+      "url": "content/doc-2250kv-drawings-v20260922.pdf",
+      "extent": { "pages": 56 },
+      "description": "成套装置的历史图纸档案（56 页扫描件，已按屏幕阅读重新出图压缩）。",
+      "source": {
+        "path": "六、附件图片/其他证明材料/3.历史档案-2250kV工频试验装置图纸.pdf",
+        "dossier": "六、附件图片"
+      },
+      "eventType": "archive",
+      "about": [{ "kind": "device", "id": "transformer" }],
+      "collectionIds": ["archives"]
+    },
+    {
+      "id": "resource-install-report",
+      "title": "工频试验变压器安装总结（历史档案）",
+      "kind": "pdf",
+      "url": "content/doc-install-report-v20260922.pdf",
+      "extent": { "pages": 17 },
+      "description": "当年的安装总结文档，记录了设备安装的技术要求与过程。",
+      "source": {
+        "path": "六、附件图片/其他证明材料/3.历史档案：工频试验变压器安装总结.pdf",
+        "dossier": "六、附件图片"
+      },
+      "eventType": "archive",
+      "about": [{ "kind": "device", "id": "transformer" }],
+      "collectionIds": ["archives"]
+    },
+    {
+      "id": "resource-2250kv-science-video",
+      "title": "2250kV/9000kVA 工频试验成套装置科普视频",
+      "kind": "video",
+      "url": "content/video-2250kv-science-v20260922.mp4",
+      "extent": { "seconds": 247 },
+      "poster": "content/video-2250kv-science-v20260922.jpg",
+      "description": "成套装置的科普短片（4 分 07 秒）：从设备构成到工频耐压试验的作用。",
+      "source": {
+        "path": "七、视频资料/2250kV9000kVA工频试验成套装置科普视频.mp4",
+        "dossier": "七、视频资料"
+      },
+      "eventType": "publicity",
+      "about": [{ "kind": "device", "id": "transformer" }],
+      "collectionIds": ["outreach"]
+    },
+    {
+      "id": "resource-award",
+      "title": "国家科技进步一等奖证书",
+      "kind": "image",
+      "url": "content/image-award-v20260922.jpg",
+      "description": "这套装置相关成果获得国家科技进步一等奖的证书。",
+      "source": {
+        "path": "六、附件图片/其他证明材料/1.国家科技进步一等奖证书.jpg",
+        "dossier": "六、附件图片"
+      },
+      "eventType": "honor",
+      "about": [{ "kind": "program" }, { "kind": "device", "id": "transformer" }],
+      "collectionIds": ["honors"]
+    },
+    {
+      "id": "resource-heritage-notice",
+      "title": "“共和国印记”见证物与工业遗产保护利用典型案例名单通知",
+      "kind": "pdf",
+      "url": "content/doc-heritage-notice-v20260922.pdf",
+      "extent": { "pages": 16 },
+      "description": "本装置入选“共和国印记”见证物与工业遗产保护利用典型案例的公布文件。",
+      "source": {
+        "path": "六、附件图片/其他证明材料/2.关于公布“共和国印记”见证物和工业遗产保护利用典型案例名单的通知.pdf",
+        "dossier": "六、附件图片"
+      },
+      "eventType": "listing",
+      "about": [{ "kind": "program" }, { "kind": "device", "id": "transformer" }],
+      "collectionIds": ["honors"]
+    },
+    {
+      "id": "resource-heritage-list",
+      "title": "中电联电力工业遗产名录公布通知",
+      "kind": "pdf",
+      "url": "content/doc-heritage-list-v20260922.pdf",
+      "extent": { "pages": 3 },
+      "description": "中电联公布“赓续工业薪火 电亮精神之路”电力工业遗产名录的通知。",
+      "source": {
+        "path": "六、附件图片/其他证明材料/5.中电联关于公布“赓续工业薪火电亮精神之路”电力工业遗产名录的通知.pdf",
+        "dossier": "六、附件图片"
+      },
+      "eventType": "listing",
+      "about": [{ "kind": "program" }, { "kind": "device", "id": "transformer" }],
+      "collectionIds": ["honors"]
+    },
+    {
+      "id": "resource-outreach",
+      "title": "武汉大学、华中科技大学学生科普工作",
+      "kind": "image",
+      "url": "content/image-outreach-v20260922.jpg",
+      "description": "依托这套装置开展的校企科普活动现场照片。",
+      "source": {
+        "path": "六、附件图片/其他证明材料/4.武大、华科学生科普工作.JPG",
+        "dossier": "六、附件图片"
+      },
+      "eventType": "outreach",
+      "about": [{ "kind": "program" }, { "kind": "device", "id": "transformer" }],
+      "collectionIds": ["outreach"]
+    },
+    {
+      "id": "resource-tiexin-play",
+      "title": "《铁心光明》舞台剧",
+      "kind": "video",
+      "url": "content/video-tiexin-guangming-v20260922.mp4",
+      "extent": { "seconds": 544 },
+      "poster": "content/video-tiexin-guangming-v20260922.jpg",
+      "description": "以这套装置的研制历程为背景创作的舞台剧影像（9 分 04 秒）。",
+      "source": {
+        "path": "七、视频资料/《铁心光明》舞台剧.mp4",
+        "dossier": "七、视频资料"
+      },
+      "eventType": "publicity",
+      "about": [{ "kind": "program" }, { "kind": "device", "id": "transformer" }],
+      "collectionIds": ["outreach"]
+    }
+  ],
+  "eventTypes": [
+    { "id": "installation", "label": "安装" },
+    { "id": "operation", "label": "运行与现状" },
+    { "id": "archive", "label": "技术档案" },
+    { "id": "honor", "label": "荣誉" },
+    { "id": "listing", "label": "名录与认定" },
+    { "id": "outreach", "label": "科普活动" },
+    { "id": "publicity", "label": "宣传影像" }
+  ],
+  "collections": [
+    { "id": "core-items", "label": "核心物项", "summary": "物项本体的历史影像：安装、运行与当前状态。" },
+    { "id": "archives", "label": "技术档案", "summary": "图纸、安装总结等原始技术文件。" },
+    { "id": "honors", "label": "荣誉与认定", "summary": "获奖证书与各级名录、认定文件。" },
+    { "id": "outreach", "label": "科普与传播", "summary": "科普活动、科普影片与文艺作品。" }
+  ],
+  "siteModel": {
+    "id": "wugao-field",
+    "name": "武高所库外试验场",
+    "summary": "",
+    "poster": "content/model-wugao-site-v20260923.jpg",
+    "source": {
+      "kind": "gltf",
+        "url": "content/wugao-site-full-v20260923.glb"
+      },
+    "camera": {
+      "position": [
+        120,
+        90,
+        170
+      ],
+      "target": [
+        0,
+        12,
+        0
+      ],
+      "minDistance": 6,
+      "maxDistance": 900
+    },
+    "hotspots": [
+      {
+        "id": "hotspot-transformer",
+        "deviceId": "transformer",
+        "label": "2250kV 工频试验变压器",
+        "description": "",
+        "nodeNames": [
+          "2250kV工频实验变压器"
+        ],
+        "offset": [
+          0,
+          6,
+          0
+        ]
+      },
+      {
+        "id": "hotspot-generator",
+        "deviceId": "generator",
+        "label": "5400kV 冲击电压发生器",
+        "description": "",
+        "nodeNames": [
+          "5400kV冲击电压发生器"
+        ],
+        "offset": [
+          0,
+          8,
+          0
+        ]
+      }
+    ]
+  }
+}
