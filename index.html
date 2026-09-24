@@ -32,5 +32,22 @@
   </head>
   <body>
     <div id="root"></div>
+    <!--
+      离线与重复访问缓存：GitHub Pages 只发 Cache-Control: max-age=600 且忽略 ETag 再验证，
+      过期后每次访问都会重下 39 MB 场地模型，而响应头不归我们控制，因此用 Service Worker
+      把大文件放进浏览器 Cache Storage（详见包根目录 sw.js）。
+      只在 https / http://localhost 生效；http://192.168.x.x 的内网部署不会注册（也不报错）。
+      updateViaCache: 'none' 让浏览器绕过 HTTP 缓存检查 sw.js 更新。
+      （本段由 project/app/index.html 同步而来；重新构建后仍然存在。）
+    -->
+    <script>
+      // 只在安全上下文注册（https / localhost）；并跳过 Vite 开发服务器（5173），
+      // 否则本地热更新会看到缓存里的旧模块。
+      if ('serviceWorker' in navigator && window.isSecureContext && location.port !== '5173') {
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' }).catch(function () {});
+        });
+      }
+    </script>
   </body>
 </html>
