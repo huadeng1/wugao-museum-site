@@ -24,7 +24,7 @@
  * 注意：Service Worker 只在安全上下文（https 或 http://localhost）注册。
  *   展厅内网用 http://192.168.x.x 打开时它不会生效（也不报错），内网本来就不缺带宽。
  */
-const BUILD = '20260924190405'; // 发布脚本会替换为 yyyyMMddHHmmss；本地调试保持 dev
+const BUILD = '20260924195049'; // 发布脚本会替换为 yyyyMMddHHmmss；本地调试保持 dev
 const CONTENT_CACHE = `museum-content-${BUILD}`;
 const ASSET_CACHE = 'museum-assets-v1';
 const CORE = ['./', './index.html'];
