@@ -28,7 +28,7 @@
         "lat": 30.509954,
         "spanMeters": 1408
       },
-      "description": "武高所（中国电科院武汉分院）位于洪山区珞喻路 143 号。拖动平移，滚轮或双指自由缩放：从洪山区全域一直到院区街区级，点标记进入真实全景漫游。",
+      "description": "武高所（中国电科院武汉分院）位于洪山区珞喻路 143 号。",
       "points": [
         {
           "id": "roam",
@@ -374,7 +374,7 @@
       "id": "wugao-720yun",
       "name": "中国电力科学研究院（武汉分院）",
       "embedUrl": "https://www.720yun.com/vr/054je0ka5u7",
-      "description": "院区真实全景漫游（720yun 作品页）。",
+      "description": "院区真实全景漫游。",
       "hotspots": []
     }
   ],
@@ -445,7 +445,7 @@
       "kind": "pdf",
       "url": "content/doc-2250kv-drawings-v20260922.pdf",
       "extent": { "pages": 56 },
-      "description": "成套装置的历史图纸档案（56 页扫描件，已按屏幕阅读重新出图压缩）。",
+      "description": "成套装置的历史图纸档案。",
       "source": {
         "path": "六、附件图片/其他证明材料/3.历史档案-2250kV工频试验装置图纸.pdf",
         "dossier": "六、附件图片"
@@ -476,7 +476,7 @@
       "url": "content/video-2250kv-science-v20260922.mp4",
       "extent": { "seconds": 247 },
       "poster": "content/video-2250kv-science-v20260922.jpg",
-      "description": "成套装置的科普短片（4 分 07 秒）：从设备构成到工频耐压试验的作用。",
+      "description": "成套装置的科普短片：从设备构成到工频耐压试验的作用。",
       "source": {
         "path": "七、视频资料/2250kV9000kVA工频试验成套装置科普视频.mp4",
         "dossier": "七、视频资料"
@@ -550,7 +550,7 @@
       "url": "content/video-tiexin-guangming-v20260922.mp4",
       "extent": { "seconds": 544 },
       "poster": "content/video-tiexin-guangming-v20260922.jpg",
-      "description": "以这套装置的研制历程为背景创作的舞台剧影像（9 分 04 秒）。",
+      "description": "以这套装置的研制历程为背景创作的舞台剧影像。",
       "source": {
         "path": "七、视频资料/《铁心光明》舞台剧.mp4",
         "dossier": "七、视频资料"
