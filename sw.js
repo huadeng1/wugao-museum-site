@@ -1,20 +1,22 @@
 /**
- * 离线与重复访问缓存（Service Worker）。
- *
- * 为什么需要它：
- *   GitHub Pages 对**所有**文件都只发 `Cache-Control: max-age=600`，而且它的 CDN
- *   忽略 `If-None-Match`；按 RFC，请求里带 ETag 时 `If-Modified-Since` 也必须被忽略。
- *   实测（curl 三组对照 + 真实浏览器）：浏览器在缓存过期后同时发送两个验证头，
- *   GitHub Pages 一律回 200 整个文件 —— 也就是说**每过 10 分钟再访问就重下 39 MB 模型**。
- *   响应头改不了，所以把缓存搬到浏览器侧的 Cache Storage：第一次下过之后，
- *   后续访问由 Service Worker 直接返回，网络字节为 0。
- *
- * 策略：
+ * 缓存策略：
  *   - 导航请求（index.html）：网络优先 → 保证新发布立刻生效，断网时回退缓存；
  *   - /assets/*（文件名带内容哈希）：缓存优先，跨发布复用；
- *   - /content/*、/draco/*、/pdfjs/*：缓存优先，首次访问时顺手存入（不做预下载）；
+ *   - /draco/*、/pdfjs/*：缓存优先，首次访问时顺手存入（都是小文件）；
+ *   - **/content/* 一律接都不接**：大二进制交给网络与浏览器 HTTP 缓存（原因见下）；
  *   - config/museum.json 等：网络优先 → 改配置不必重新发布；
  *   - 带 Range 的请求（视频/PDF 分段）：不拦截，交给网络，避免破坏拖动进度。
+ *
+ * ⚠️ 为什么 /content/* 必须放行（2026-09-24 修复线上 bug）：
+ *   设备模型的"正在准备 x%"完全依赖 `ProgressEvent.loaded / total`（deviceModel.ts:107-108），
+ *   而 WebKit 在 **Service Worker 应答的下载里会丢失进度事件**：
+ *     - WebKit #256696 REGRESSION (iOS 16): Missing progress during ServiceWorker downloads
+ *     - WebKit #258412 SW 流式响应在 iOS 上被上报成 0kb
+ *     - WebKit #303097 / #286060 SW 下载被静默丢弃 / 提前中断
+ *   结果：iPhone 上场地模型（39 MB）的进度永远到不了 100%，加载卡片一直停在"正在准备"。
+ *   另外 `response.clone()` 会把 39 MB 响应在内存里再存一份，而此刻 WebGL 正在分配
+ *   数百 MB 贴图（本馆场地模型解码后约 400 MB），在 iOS 的内存/显存上限下雪上加霜。
+ *   这几张大文件交给浏览器 HTTP 缓存（max-age=600）即可，收益远小于风险。
  *
  * 版本与失效：
  *   `BUILD` 由发布脚本 publish-github-pages.ps1 在每次发布时替换成时间戳，
@@ -24,7 +26,7 @@
  * 注意：Service Worker 只在安全上下文（https 或 http://localhost）注册。
  *   展厅内网用 http://192.168.x.x 打开时它不会生效（也不报错），内网本来就不缺带宽。
  */
-const BUILD = '20260924195049'; // 发布脚本会替换为 yyyyMMddHHmmss；本地调试保持 dev
+const BUILD = '20261008142818'; // 发布脚本会替换为 yyyyMMddHHmmss；本地调试保持 dev
 const CONTENT_CACHE = `museum-content-${BUILD}`;
 const ASSET_CACHE = 'museum-assets-v1';
 const CORE = ['./', './index.html'];
@@ -103,7 +105,11 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(cacheFirst(request, ASSET_CACHE));
     return;
   }
-  if (/\/content\/|\/draco\/|\/pdfjs\//.test(url.pathname)) {
+  // /content/* 一律放行（不 respondWith）：大二进制交给网络 + 浏览器 HTTP 缓存。
+  // 理由见文件头：WebKit 在 SW 应答的下载中会丢失 ProgressEvent（#256696），
+  // 而设备页的"正在准备 x%"就靠它驱动 —— 被 SW 接管后 iPhone 上卡片永不消失。
+  if (/\/content\//.test(url.pathname)) return;
+  if (/\/draco\/|\/pdfjs\//.test(url.pathname)) {
     event.respondWith(cacheFirst(request, CONTENT_CACHE));
     return;
   }
