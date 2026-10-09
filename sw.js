@@ -1,10 +1,11 @@
 /**
  * 缓存策略：
- *   - 导航请求（index.html）：网络优先 → 保证新发布立刻生效，断网时回退缓存；
+ *   - 导航请求（index.html）：**绕过 HTTP 缓存的**网络优先 → 保证新发布立刻生效，断网时回退缓存；
  *   - /assets/*（文件名带内容哈希）：缓存优先，跨发布复用；
  *   - /draco/*、/pdfjs/*：缓存优先，首次访问时顺手存入（都是小文件）；
  *   - **/content/* 一律接都不接**：大二进制交给网络与浏览器 HTTP 缓存（原因见下）；
- *   - config/museum.json 等：网络优先 → 改配置不必重新发布；
+ *   - config/museum.json 等：同样是绕过 HTTP 缓存的网络优先 → 改配置不必重新发布；
+ *     （导航与配置必须同版本，否则会出现"旧 JS + 新配置"的半新半旧组合，瓦片模板一变就整屏失败）；
  *   - 带 Range 的请求（视频/PDF 分段）：不拦截，交给网络，避免破坏拖动进度。
  *
  * ⚠️ 为什么 /content/* 必须放行（2026-09-24 修复线上 bug）：
@@ -26,7 +27,7 @@
  * 注意：Service Worker 只在安全上下文（https 或 http://localhost）注册。
  *   展厅内网用 http://192.168.x.x 打开时它不会生效（也不报错），内网本来就不缺带宽。
  */
-const BUILD = '20261009105946'; // 发布脚本会替换为 yyyyMMddHHmmss；本地调试保持 dev
+const BUILD = '20261009112310'; // 发布脚本会替换为 yyyyMMddHHmmss；本地调试保持 dev
 const CONTENT_CACHE = `museum-content-${BUILD}`;
 const ASSET_CACHE = 'museum-assets-v1';
 const CORE = ['./', './index.html'];
@@ -66,11 +67,28 @@ async function cacheFirst(request, cacheName) {
   return response;
 }
 
-/** 网络优先：保证配置与新发布及时生效，失败时回退缓存（离线可用）。 */
+/**
+ * 网络优先：保证配置与新发布及时生效，失败时回退缓存（离线可用）。
+ *
+ * ⚠️ 这里**显式绕过浏览器 HTTP 缓存**（`cache: 'no-store'`），是 2026-10-09 修线上问题的关键：
+ *   GitHub Pages 给 index.html / config 都发 `Cache-Control: max-age=600`，
+ *   而 `fetch()` 默认会直接吃 HTTP 缓存 —— 于是会出现
+ *   **旧的 index.html（旧 JS）+ 新拉到的 config** 这种"半新半旧"组合。
+ *   瓦片模板一旦改过（例如加了 `{s}`），旧 JS 把字面量 `{s}` 拼进 URL，整屏瓦片**全部**失败，
+ *   看起来就是"地图上一片碎图"，而且刷新一下也未必好（10 分钟内仍是缓存里的旧 HTML）。
+ *   绕过 HTTP 缓存后：能联网就一定拿到同一版发布，联不上网才用 SW 缓存兜底。
+ */
 async function networkFirst(request, cacheName) {
   const cache = await caches.open(cacheName);
   try {
-    const response = await fetch(request);
+    let response;
+    try {
+      response = await fetch(request, { cache: 'no-store' });
+    } catch (error) {
+      // 少数请求不允许带 cache 模式（例如 `only-if-cached`），退回默认取法。
+      if (error instanceof TypeError) response = await fetch(request);
+      else throw error;
+    }
     if (response && response.ok && response.status === 200) {
       cache.put(request, response.clone()).catch(() => {});
     }
