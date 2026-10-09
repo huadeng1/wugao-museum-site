@@ -24,28 +24,12 @@
     <title>武高所数字博物馆</title>
     <!-- 内联 SVG 图标：不给浏览器留一个必然 404 的 /favicon.ico（控制台噪音）。 -->
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23327a74'/%3E%3Ctext x='16' y='23' font-size='19' text-anchor='middle' fill='white' font-family='sans-serif'%3E武%3C/text%3E%3C/svg%3E" />
-    <script type="module" crossorigin src="./assets/index-C7BsmJCA.js"></script>
+    <script type="module" crossorigin src="./assets/index-ChWO3S6u.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/rolldown-runtime-hePW80VL.js">
     <link rel="modulepreload" crossorigin href="./assets/three-engine-BSfwLF8S.js">
     <link rel="stylesheet" crossorigin href="./assets/index-DGfw3hVm.css">
   </head>
   <body>
     <div id="root"></div>
-    <!--
-      离线与重复访问缓存：GitHub Pages 只发 Cache-Control: max-age=600 且忽略 ETag 再验证，
-      过期后每次访问都会重下 39 MB 场地模型，而响应头不归我们控制，因此用 Service Worker
-      把大文件放进浏览器 Cache Storage（详见包根目录 sw.js）。
-      只在 https / http://localhost 生效；http://192.168.x.x 的内网部署不会注册（也不报错）。
-      updateViaCache: 'none' 让浏览器绕过 HTTP 缓存检查 sw.js 更新。
-    -->
-    <script>
-      // 只在安全上下文注册（https / localhost）；并跳过 Vite 开发服务器（5173），
-      // 否则本地热更新会看到缓存里的旧模块。
-      if ('serviceWorker' in navigator && window.isSecureContext && location.port !== '5173') {
-        window.addEventListener('load', function () {
-          navigator.serviceWorker.register('./sw.js', { updateViaCache: 'none' }).catch(function () {});
-        });
-      }
-    </script>
   </body>
 </html>
