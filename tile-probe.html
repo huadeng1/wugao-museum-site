@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <title>天地图单瓦片诊断</title>
+    <style>
+      :root { color-scheme: light; font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+      body { margin: 0; padding: 24px; color: #17212b; background: #f4f7f8; }
+      main { max-width: 680px; margin: auto; padding: 20px; border-radius: 16px; background: white; box-shadow: 0 2px 14px #16334418; }
+      h1 { margin: 0 0 8px; font-size: 21px; }
+      #status { margin: 12px 0; padding: 12px; border-radius: 10px; background: #edf1f3; font-weight: 600; }
+      #status.ok { color: #17633d; background: #e7f6ed; }
+      #status.fail { color: #9b2929; background: #fdeaea; }
+      img { display: block; width: 256px; height: 256px; margin: 16px 0; border: 1px solid #cbd5db; background: #edf1f3; }
+      button { min-height: 44px; padding: 8px 16px; border: 0; border-radius: 10px; color: white; background: #176b66; font: inherit; }
+      small { color: #52616a; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>天地图单瓦片诊断</h1>
+      <p>此页通过网页图片请求加载一张武汉院区附近的天地图主源瓦片，不是直接导航到瓦片地址。</p>
+      <div id="status" role="status" aria-live="polite">正在请求……</div>
+      <img id="tile" alt="天地图瓦片；若加载失败会显示灰色占位框">
+      <button id="retry" type="button">重新请求</button>
+      <p><small>瓦片坐标：TILEMATRIX=16，TILECOL=53595，TILEROW=26925。失败表示 Safari 的图片请求未成功；精确 HTTP 状态码需查看 Safari Web Inspector。</small></p>
+    </main>
+    <script>
+      const tileUrl = 'https://t0.tianditu.gov.cn/vec_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=vec&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX=16&TILEROW=26925&TILECOL=53595&tk=3b72888c077909edf7ef40e8f3c3b2e4';
+      const image = document.getElementById('tile');
+      const status = document.getElementById('status');
+      image.addEventListener('load', () => {
+        status.className = 'ok';
+        status.textContent = `图片请求成功：${image.naturalWidth} × ${image.naturalHeight}`;
+      });
+      image.addEventListener('error', () => {
+        status.className = 'fail';
+        status.textContent = '图片请求失败。Safari 未能解码到瓦片图片；仅凭页面无法读取 HTTP 状态码。';
+      });
+      document.getElementById('retry').addEventListener('click', () => {
+        status.className = '';
+        status.textContent = '正在请求……';
+        image.src = '';
+        requestAnimationFrame(() => { image.src = tileUrl; });
+      });
+      image.src = tileUrl;
+    </script>
+  </body>
+</html>
