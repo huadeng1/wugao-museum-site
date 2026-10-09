@@ -1,0 +1,2 @@
+import{i as e}from"./index-5hAO1whD.js";var t=e(`minus`,[[`path`,{d:`M5 12h14`,key:`1ays0h`}]]),n=e(`plus`,[[`path`,{d:`M5 12h14`,key:`1ays0h`}],[`path`,{d:`M12 5v14`,key:`s699le`}]]);export{t as n,n as t};
+//# sourceMappingURL=plus-Dt7YphNX.js.map
