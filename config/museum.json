@@ -387,6 +387,7 @@
       "title": "2250kV 工频试验成套装置安装过程（1980 年）",
       "kind": "image",
       "url": "content/image-2250kv-install-1980-v20260922.jpg",
+      "thumb": "content/thumbs/image-2250kv-install-1980-v20260922.jpg",
       "description": "拍摄于 1980 年的安装过程照片组图，记录了成套装置在现场组立安装的情形。",
       "source": {
         "path": "六、附件图片/核心物项/1-2250kV工频试验成套装置安装过程照片组图（拍摄于1980年）.png",
@@ -402,6 +403,7 @@
       "title": "2250kV 工频试验成套装置安装完成（1981 年）",
       "kind": "image",
       "url": "content/image-2250kv-installed-1981-v20260922.jpg",
+      "thumb": "content/thumbs/image-2250kv-installed-1981-v20260922.jpg",
       "description": "拍摄于 1981 年，成套装置安装完成后的现场照片。",
       "source": {
         "path": "六、附件图片/核心物项/2-2250kV工频试验成套装置安装完成（拍摄于1981年）.png",
@@ -417,6 +419,7 @@
       "title": "夏日的 2250kV 工频试验成套装置（1999 年）",
       "kind": "image",
       "url": "content/image-2250kv-summer-1999-v20260922.jpg",
+      "thumb": "content/thumbs/image-2250kv-summer-1999-v20260922.jpg",
       "description": "拍摄于 1999 年夏，成套装置在库外试验场运行时期的历史影像。",
       "source": {
         "path": "六、附件图片/核心物项/3-夏日的2250kV工频试验成套装置（拍摄于1999年）.png",
@@ -432,6 +435,7 @@
       "title": "2250kV 工频试验变压器全貌（2025 年）",
       "kind": "image",
       "url": "content/image-2250kv-overview-2025-v20260922.jpg",
+      "thumb": "content/thumbs/image-2250kv-overview-2025-v20260922.jpg",
       "description": "2025 年拍摄的成套装置全貌，是这台设备当前状态的权威影像。",
       "source": {
         "path": "六、附件图片/核心物项/3-2250kV工频试验变压器全貌 (2025年).jpg",
@@ -479,6 +483,7 @@
       "url": "content/video-2250kv-science-v20260922.mp4",
       "extent": { "seconds": 247 },
       "poster": "content/video-2250kv-science-v20260922.jpg",
+      "thumb": "content/thumbs/video-2250kv-science-v20260922.jpg",
       "description": "成套装置的科普短片：从设备构成到工频耐压试验的作用。",
       "source": {
         "path": "七、视频资料/2250kV9000kVA工频试验成套装置科普视频.mp4",
@@ -493,6 +498,7 @@
       "title": "国家科技进步一等奖证书",
       "kind": "image",
       "url": "content/image-award-v20260922.jpg",
+      "thumb": "content/thumbs/image-award-v20260922.jpg",
       "description": "这套装置相关成果获得国家科技进步一等奖的证书。",
       "source": {
         "path": "六、附件图片/其他证明材料/1.国家科技进步一等奖证书.jpg",
@@ -537,6 +543,7 @@
       "title": "武汉大学、华中科技大学学生科普工作",
       "kind": "image",
       "url": "content/image-outreach-v20260922.jpg",
+      "thumb": "content/thumbs/image-outreach-v20260922.jpg",
       "description": "依托这套装置开展的校企科普活动现场照片。",
       "source": {
         "path": "六、附件图片/其他证明材料/4.武大、华科学生科普工作.JPG",
@@ -553,6 +560,7 @@
       "url": "content/video-tiexin-guangming-v20260922.mp4",
       "extent": { "seconds": 544 },
       "poster": "content/video-tiexin-guangming-v20260922.jpg",
+      "thumb": "content/thumbs/video-tiexin-guangming-v20260922.jpg",
       "description": "以这套装置的研制历程为背景创作的舞台剧影像。",
       "source": {
         "path": "七、视频资料/《铁心光明》舞台剧.mp4",

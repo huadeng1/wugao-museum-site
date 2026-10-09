@@ -1,0 +1,120 @@
+{
+  "prototypeId": "xx-digital-museum-mobile",
+  "sourcePrototype": "wugao-digital-museum",
+  "assets": [
+    {
+      "file": "transformer-2250kv-v20260922b.glb",
+      "type": "model",
+      "use": "设备模型·2250kV 工频试验变压器",
+      "note": "院方交付的真实模型：2250kV工频实验变压器.FBX（122 MB，379 万面）经 Blender 抽稀到 14%（52 万面），再用 scripts/optimize-glb.mjs 清掉未使用的顶点属性（TEXCOORD_1/2：各 30 万个顶点）、dedup + join 合并材质（303 → 26）、WebP 贴图重编码与 Draco 压缩；8.87 MB → 5.53 MB，节点保持原名（本次无语义部件名，整机查看）"
+    },
+    {
+      "file": "generator-5400kv-v20260922b.glb",
+      "type": "model",
+      "use": "设备模型·5400kV 冲击电压发生器",
+      "note": "院方交付的真实模型：5400kV冲击电压发生器-01.FBX（74 MB，220 万面）经 Blender 抽稀到 18%（39.5 万面），再用 scripts/optimize-glb.mjs 合并材质（111 → 18）+ WebP + Draco；4.19 MB → 2.81 MB；保留 1F~10F 与 WK 节点名用于拆解"
+    },
+    {
+      "file": "wugao-site-full-v20260923.glb",
+      "type": "model",
+      "use": "设备模型入口·武高所库外试验场高细节版",
+      "note": "院方交付的武高所库外试验场.FBX：1450 个源对象合并成 6 个命名网格、363 个图元，约 910.6 万三角面，不做几何抽稀；清理未用 UV 与顶点色并以 Draco 压缩。264 张 JPEG 用 app/scripts/repack-glb-jpegs.mjs 按质量 90 重编码，46 张 PNG、全部贴图尺寸和几何压缩数据保持原样；137.6 MB → 87.5 MB。小米 17 Pro 真机单页测试从约 9.2–10.2 秒缩至约 8.2 秒可见。"
+    },
+    {
+      "file": "model-wugao-site-v20260923.jpg",
+      "type": "image",
+      "use": "库外试验场海报（无 WebGL / 加载中的兜底图）",
+      "note": "由 scripts/capture-model-posters.mjs 截取纯三维画布生成，不包含标题、工具、标记或设备卡片"
+    },
+    {
+      "file": "model-generator-5400kv-v20260922.jpg",
+      "type": "image",
+      "use": "5400kV 冲击电压发生器海报",
+      "note": "由 scripts/capture-model-posters.mjs 截取本站真实渲染画面生成"
+    },
+    {
+      "file": "image-2250kv-overview-2025-v20260922.jpg",
+      "type": "image",
+      "use": "资料·装置全貌（2025 年）；同时是设备页海报",
+      "note": "院方《六、附件图片/核心物项/3-2250kV工频试验变压器全貌 (2025年)》4096×3072 → 2048×1536 / JPEG q82"
+    },
+    {
+      "file": "image-2250kv-installed-1981-v20260922.jpg",
+      "type": "image",
+      "use": "资料·安装完成（1981 年）",
+      "note": "院方《六、附件图片/核心物项/2-…安装完成（拍摄于1981年）.png》"
+    },
+    {
+      "file": "image-2250kv-install-1980-v20260922.jpg",
+      "type": "image",
+      "use": "资料·安装过程组图（1980 年）",
+      "note": "院方《六、附件图片/核心物项/1-…安装过程照片组图（拍摄于1980年）.png》"
+    },
+    {
+      "file": "image-2250kv-summer-1999-v20260922.jpg",
+      "type": "image",
+      "use": "资料·夏日装置（1999 年）",
+      "note": "院方《六、附件图片/核心物项/3-夏日的2250kV工频试验成套装置（拍摄于1999年）.png》"
+    },
+    {
+      "file": "image-outreach-v20260922.jpg",
+      "type": "image",
+      "use": "资料·武大、华科学生科普工作",
+      "note": "院方《六、附件图片/其他证明材料/4.武大、华科学生科普工作.JPG》"
+    },
+    {
+      "file": "image-award-v20260922.jpg",
+      "type": "image",
+      "use": "资料·国家科技进步一等奖证书",
+      "note": "院方《六、附件图片/其他证明材料/1.国家科技进步一等奖证书.jpg》。**获奖年份未标注**：原始文件名与交付说明里都没有年份，因此站内编目 `period` 留空（界面显示「未标注」），文件名也不再带年份，避免把推断当证据。"
+    },
+    {
+      "file": "video-2250kv-science-v20260922.mp4",
+      "type": "video",
+      "use": "资料·成套装置科普视频（4 分 07 秒）",
+      "note": "院方《七、视频资料/2250kV9000kVA工频试验成套装置科普视频.mp4》，1080p 349 MB → 720p H.264 CRF29 + faststart 29.5 MB"
+    },
+    {
+      "file": "video-2250kv-science-v20260922.jpg",
+      "type": "image",
+      "use": "科普视频海报",
+      "note": "从转码成片第 6 秒抽帧"
+    },
+    {
+      "file": "video-tiexin-guangming-v20260922.mp4",
+      "type": "video",
+      "use": "资料·《铁心光明》舞台剧（9 分 04 秒）",
+      "note": "院方《七、视频资料/《铁心光明》舞台剧.mp4》，1080p 647 MB → 720p H.264 CRF29 + faststart 27.2 MB"
+    },
+    {
+      "file": "video-tiexin-guangming-v20260922.jpg",
+      "type": "image",
+      "use": "舞台剧海报",
+      "note": "从转码成片第 20 秒抽帧"
+    },
+    {
+      "file": "doc-2250kv-drawings-v20260922.pdf",
+      "type": "pdf",
+      "use": "资料·2250kV 工频试验装置图纸（历史档案，56 页）",
+      "note": "院方《六、附件图片/其他证明材料/3.历史档案-2250kV工频试验装置图纸.pdf》622 MB（600dpi 级扫描）→ 按 1800px 宽重新出图，16.3 MB"
+    },
+    {
+      "file": "doc-install-report-v20260922.pdf",
+      "type": "pdf",
+      "use": "资料·工频试验变压器安装总结（历史档案，17 页）",
+      "note": "院方同目录《3.历史档案：工频试验变压器安装总结.pdf》，10.5 MB，网页体积可接受，原样入库（保留文字可搜索）"
+    },
+    {
+      "file": "doc-heritage-notice-v20260922.pdf",
+      "type": "pdf",
+      "use": "资料·“共和国印记”见证物与工业遗产保护利用典型案例名单通知（16 页）",
+      "note": "院方同目录《2.关于公布“共和国印记”…的通知.pdf》，4.7 MB，原样入库"
+    },
+    {
+      "file": "doc-heritage-list-v20260922.pdf",
+      "type": "pdf",
+      "use": "资料·中电联电力工业遗产名录公布通知（3 页）",
+      "note": "院方同目录《5.中电联关于公布“赓续工业薪火电亮精神之路”电力工业遗产名录的通知.pdf》，1.7 MB，原样入库"
+    }
+  ]
+}
