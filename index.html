@@ -21,13 +21,22 @@
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; media-src 'self' blob: https:; font-src 'self' data:; connect-src 'self' blob: ws: wss: https:; worker-src 'self' blob:; frame-src 'self' https:; object-src 'none'; base-uri 'self'; form-action 'self'"
     />
-    <title>武高所数字博物馆</title>
-    <!-- 内联 SVG 图标：不给浏览器留一个必然 404 的 /favicon.ico（控制台噪音）。 -->
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23327a74'/%3E%3Ctext x='16' y='23' font-size='19' text-anchor='middle' fill='white' font-family='sans-serif'%3E武%3C/text%3E%3C/svg%3E" />
-    <script type="module" crossorigin src="./assets/index-Idnom0Za.js"></script>
+    <title>XXX所数字博物馆</title>
+    <!--
+      内联 SVG 图标（data-URI）：不给浏览器留一个必然 404 的 /favicon.ico（控制台噪音）。
+      设计：青绿渐变圆角牌 + 内侧细描边 + 宋体「X」。为什么是字而不是图形——标签页图标
+      实际只有 16px，塔节/绝缘子/波形这类纯几何符号缩到 16px 就糊成一团，而占位字「X」在任何
+      尺寸都一眼认得出（2026-10-19 三份对照方案见 `.workbuddy-ai/icon-lab/`，`favicon.svg`
+      是同一形状的可编辑版本）。渐变与内线让它在 180px 收藏尺寸下仍像一枚印章；字体栈带
+      SimSun / Noto Serif CJK 兜底，缺字时退回系统衬线。
+    -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='t' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%233d8b84'/%3E%3Cstop offset='1' stop-color='%232a6a64'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7.5' fill='url(%23t)'/%3E%3Crect x='2.9' y='2.9' width='26.2' height='26.2' rx='5' fill='none' stroke='%23fff' stroke-opacity='.34' stroke-width='.9'/%3E%3Ctext x='16' y='23.8' font-size='21' text-anchor='middle' fill='%23fff' font-family='Songti SC,SimSun,Noto Serif CJK SC,serif' font-weight='700'%3EX%3C/text%3E%3C/svg%3E" />
+    <!-- iOS「加到主屏幕」用它（Safari 不认 SVG 图标）：满幅直角，圆角交给系统遮。 -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon-180-CiegtoMx.png" />
+    <script type="module" crossorigin src="./assets/index-DRnMeIe-.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/rolldown-runtime-hePW80VL.js">
-    <link rel="modulepreload" crossorigin href="./assets/three-engine-BSfwLF8S.js">
-    <link rel="stylesheet" crossorigin href="./assets/index-BTRQPWUj.css">
+    <link rel="modulepreload" crossorigin href="./assets/three-engine-B4IMMP-u.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-BvH3XyF-.css">
   </head>
   <body>
     <div id="root"></div>

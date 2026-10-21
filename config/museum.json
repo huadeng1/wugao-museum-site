@@ -1,22 +1,47 @@
 {
   "version": 1,
   "site": {
-    "name": "武高所数字博物馆",
+    "name": "XXX所数字博物馆",
     "defaultRoute": "/map/wugao"
   },
   "maps": [
     {
       "id": "wugao",
-      "name": "中国电力科学研究院（武汉分院）",
+      "name": "XXX研究院（XX分院）",
       "level": "全域视角",
       "basemap": {
         "kind": "tiles",
-        "urlTemplate": "https://t0.tianditu.gov.cn/vec_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=vec&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=3b72888c077909edf7ef40e8f3c3b2e4",
-        "overlayTemplate": "https://t0.tianditu.gov.cn/cva_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=cva&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=3b72888c077909edf7ef40e8f3c3b2e4",
-        "subdomains": ["0", "1", "2", "3", "4", "5", "6", "7"],
-        "fallbackTemplate": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-        "fallbackOverlayTemplate": "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}",
-        "attribution": "© 天地图 · 备用影像 © Esri",
+        "urlTemplate": "https://t0.tianditu.gov.cn/img_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=3b72888c077909edf7ef40e8f3c3b2e4",
+        "overlayTemplate": "https://t0.tianditu.gov.cn/cia_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=cia&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=3b72888c077909edf7ef40e8f3c3b2e4",
+        "subdomains": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "attribution": "© 天地图",
+        "variants": [
+          {
+            "id": "img",
+            "label": "影像",
+            "urlTemplate": "https://t0.tianditu.gov.cn/img_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=img&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=3b72888c077909edf7ef40e8f3c3b2e4",
+            "overlayTemplate": "https://t0.tianditu.gov.cn/cia_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=cia&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=3b72888c077909edf7ef40e8f3c3b2e4",
+            "fallbackTemplate": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+            "fallbackOverlayTemplate": "https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}",
+            "attribution": "© 天地图 · 备用影像 © Esri"
+          },
+          {
+            "id": "vec",
+            "label": "矢量",
+            "urlTemplate": "https://t0.tianditu.gov.cn/vec_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=vec&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=3b72888c077909edf7ef40e8f3c3b2e4",
+            "overlayTemplate": "https://t0.tianditu.gov.cn/cva_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=cva&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=3b72888c077909edf7ef40e8f3c3b2e4",
+            "attribution": "© 天地图"
+          }
+        ],
         "minZoom": 10,
         "maxZoom": 18,
         "bounds": {
@@ -27,18 +52,18 @@
         }
       },
       "initialView": {
-        "lng": 114.398972,
-        "lat": 30.509954,
-        "spanMeters": 1408
+        "lng": 114.397412,
+        "lat": 30.511084,
+        "spanMeters": 1100
       },
-      "description": "武高所（中国电科院武汉分院）位于洪山区珞喻路 143 号。",
+      "description": "XXX所（XXX研究院）位于武汉市洪山区。",
       "points": [
         {
           "id": "roam",
-          "label": "中国电力科学研究院（武汉分院）",
+          "label": "XXX研究院（XX分院）",
           "description": "进入院区真实全景漫游",
-          "lng": 114.398389,
-          "lat": 30.509407,
+          "lng": 114.398134,
+          "lat": 30.510199,
           "target": {
             "kind": "panorama",
             "id": "wugao-720yun"
@@ -55,7 +80,7 @@
       "poster": "content/image-2250kv-overview-2025-v20260922.jpg",
       "source": {
         "kind": "gltf",
-        "url": "content/transformer-2250kv-v20260922b.glb"
+        "url": "content/transformer-2250kv-user-20261014.glb"
       },
       "camera": {
         "position": [
@@ -71,7 +96,200 @@
         "minDistance": 8,
         "maxDistance": 220
       },
-      "parts": []
+      "parts": [],
+      "hotspots": [
+        {
+          "id": "t2250-bushing",
+          "label": "高压出线套管",
+          "body": "从器身顶部引出 2250 kV 高压的通道。瓷套外壁的伞裙一级级张开，把沿表面的爬电距离拉长；内里是一根导电杆，直通上方的均压环。",
+          "position": [
+            -5.14,
+            14.2,
+            3.29
+          ],
+          "facts": [
+            {
+              "label": "额定电压",
+              "value": "2250 kV"
+            },
+            {
+              "label": "绝缘",
+              "value": "瓷套 + 变压器油"
+            }
+          ],
+          "resourceIds": [
+            "resource-2250kv-science-video",
+            "resource-drawings-2250kv"
+          ],
+          "source": "literature"
+        },
+        {
+          "id": "t2250-ring",
+          "label": "顶部均压环",
+          "body": "直径远大于导电杆的金属圆环，作用是把顶端的电场\"摊平\"。尖角处电场集中、容易起晕，套上一圈大环，电荷重新分布，两百万伏也能安静运行。",
+          "position": [
+            -1.88,
+            15.9,
+            3.38
+          ],
+          "facts": [
+            {
+              "label": "作用",
+              "value": "均压、抑制电晕"
+            },
+            {
+              "label": "形状",
+              "value": "大直径金属环"
+            }
+          ],
+          "resourceIds": [
+            "resource-2250kv-science-video"
+          ],
+          "source": "estimate"
+        },
+        {
+          "id": "t2250-core",
+          "label": "器身与铁心",
+          "body": "铁心由 0.35 mm 厚的冷轧硅钢片一片片叠成，外面套着高低压绕组。通电后磁通在铁心里闭合，把电压抬到 2250 kV；整个器身浸在变压器油里散热、绝缘。",
+          "position": [
+            0.1,
+            5.86,
+            11.91
+          ],
+          "facts": [
+            {
+              "label": "容量",
+              "value": "9000 kVA"
+            },
+            {
+              "label": "硅钢片厚",
+              "value": "0.35 mm"
+            }
+          ],
+          "resourceIds": [
+            "resource-drawings-2250kv",
+            "resource-install-report"
+          ],
+          "source": "literature"
+        },
+        {
+          "id": "t2250-divider",
+          "label": "电容分压器",
+          "body": "2250 kV 没法直接接表，只能按比例缩小。这一串电容把高压均匀分掉，末端的低压信号送进测量系统，读数才落在仪表能承受的范围里。",
+          "position": [
+            3.35,
+            8.75,
+            -10.26
+          ],
+          "facts": [
+            {
+              "label": "用途",
+              "value": "电压测量"
+            },
+            {
+              "label": "方式",
+              "value": "电容串联分压"
+            }
+          ],
+          "resourceIds": [
+            "resource-install-report"
+          ],
+          "source": "estimate"
+        },
+        {
+          "id": "t2250-support",
+          "label": "支柱绝缘子",
+          "body": "托住均压环和电极的\"腿\"。它既要扛起十几米高的金属件，又要在高压与地之间挡住电流，所以做成带伞裙的绝缘柱。",
+          "position": [
+            -4.93,
+            3.48,
+            11.17
+          ],
+          "facts": [
+            {
+              "label": "功能",
+              "value": "支撑 + 绝缘"
+            },
+            {
+              "label": "材料",
+              "value": "瓷或复合绝缘"
+            }
+          ],
+          "resourceIds": [],
+          "source": "estimate"
+        },
+        {
+          "id": "t2250-base",
+          "label": "底座与油箱",
+          "body": "整套器身坐在一只大油箱上。油既绝缘又带走热量，箱壁的散热片让油循环起来。1981 年安装完成时，这套装置是我国自行设计制造的 2250 kV 工频试验装备。",
+          "position": [
+            2.88,
+            4.68,
+            10.96
+          ],
+          "facts": [
+            {
+              "label": "投运",
+              "value": "1981 年"
+            },
+            {
+              "label": "油箱",
+              "value": "器身浸油、自然循环"
+            }
+          ],
+          "resourceIds": [
+            "resource-2250kv-installed-1981",
+            "resource-2250kv-overview-2025"
+          ],
+          "source": "literature"
+        },
+        {
+          "id": "t2250-ground",
+          "label": "接地与基础",
+          "body": "高压试验里，\"地\"和高压一样重要。基础里的接地网把试验电流迅速导走，让设备外壳、操作台和人都站在同一个电位上。",
+          "position": [
+            2.37,
+            0.76,
+            0.67
+          ],
+          "facts": [
+            {
+              "label": "作用",
+              "value": "泄流、等电位"
+            },
+            {
+              "label": "要点",
+              "value": "接地可靠、走线短直"
+            }
+          ],
+          "resourceIds": [],
+          "source": "estimate"
+        },
+        {
+          "id": "t2250-busbar",
+          "label": "高压引线与母线",
+          "body": "从套管出发接到试品的那一段导线。它整段都处在 2250 kV 上，走向和长度要按电场分布算好，避免对旁边的构架放电。",
+          "position": [
+            1.09,
+            7.39,
+            -7.04
+          ],
+          "facts": [
+            {
+              "label": "电压",
+              "value": "2250 kV"
+            },
+            {
+              "label": "走向",
+              "value": "套管 → 试品区"
+            }
+          ],
+          "resourceIds": [
+            "resource-drawings-2250kv"
+          ],
+          "source": "estimate"
+        }
+      ]
     },
     {
       "id": "generator",
@@ -80,7 +298,7 @@
       "poster": "content/model-generator-5400kv-v20260922.jpg",
       "source": {
         "kind": "gltf",
-        "url": "content/generator-5400kv-v20260922b.glb"
+        "url": "content/generator-5400kv-user-20261014.glb"
       },
       "camera": {
         "position": [
@@ -100,7 +318,8 @@
         "mode": "grouped",
         "order": "outside-in",
         "duration": 9,
-        "layout": "none"
+        "layout": "none",
+        "overlap": 2.4
       },
       "parts": [
         {
@@ -112,11 +331,11 @@
           ],
           "level": 1,
           "direction": [
-            0.6,
-            0.75,
+            0.2,
+            0.98,
             0
           ],
-          "distance": 18,
+          "distance": 27,
           "sequence": [
             0,
             1
@@ -131,11 +350,11 @@
           ],
           "level": 1,
           "direction": [
-            -0.6,
-            0.75,
+            -0.3,
+            0.955,
             0
           ],
-          "distance": 17,
+          "distance": 22,
           "sequence": [
             0,
             1
@@ -340,11 +559,11 @@
           ],
           "level": 3,
           "direction": [
-            0.707,
+            0.7,
             0,
-            0.707
+            -0.714
           ],
-          "distance": 20,
+          "distance": 18,
           "sequence": [
             0,
             1
@@ -359,11 +578,11 @@
           ],
           "level": 4,
           "direction": [
-            -0.6,
-            0.15,
-            -0.75
+            -0.9,
+            -0.42,
+            -0.13
           ],
-          "distance": 14,
+          "distance": 12,
           "sequence": [
             0,
             1
@@ -375,7 +594,7 @@
   "panoramas": [
     {
       "id": "wugao-720yun",
-      "name": "中国电力科学研究院（武汉分院）",
+      "name": "XXX研究院（XX分院）",
       "embedUrl": "https://www.720yun.com/vr/054je0ka5u7",
       "description": "院区真实全景漫游。",
       "hotspots": []
@@ -393,10 +612,20 @@
         "path": "六、附件图片/核心物项/1-2250kV工频试验成套装置安装过程照片组图（拍摄于1980年）.png",
         "dossier": "六、附件图片"
       },
-      "period": { "year": 1980, "label": "拍摄于 1980 年" },
+      "period": {
+        "year": 1980,
+        "label": "拍摄于 1980 年"
+      },
       "eventType": "installation",
-      "about": [{ "kind": "device", "id": "transformer" }],
-      "collectionIds": ["core-items"]
+      "about": [
+        {
+          "kind": "device",
+          "id": "transformer"
+        }
+      ],
+      "collectionIds": [
+        "core-items"
+      ]
     },
     {
       "id": "resource-2250kv-installed-1981",
@@ -409,10 +638,20 @@
         "path": "六、附件图片/核心物项/2-2250kV工频试验成套装置安装完成（拍摄于1981年）.png",
         "dossier": "六、附件图片"
       },
-      "period": { "year": 1981, "label": "拍摄于 1981 年" },
+      "period": {
+        "year": 1981,
+        "label": "拍摄于 1981 年"
+      },
       "eventType": "installation",
-      "about": [{ "kind": "device", "id": "transformer" }],
-      "collectionIds": ["core-items"]
+      "about": [
+        {
+          "kind": "device",
+          "id": "transformer"
+        }
+      ],
+      "collectionIds": [
+        "core-items"
+      ]
     },
     {
       "id": "resource-2250kv-summer-1999",
@@ -420,15 +659,25 @@
       "kind": "image",
       "url": "content/image-2250kv-summer-1999-v20260922.jpg",
       "thumb": "content/thumbs/image-2250kv-summer-1999-v20260922.jpg",
-      "description": "拍摄于 1999 年夏，成套装置在库外试验场运行时期的历史影像。",
+      "description": "拍摄于 1999 年夏，成套装置在XXX所户外试验场运行时期的历史影像。",
       "source": {
         "path": "六、附件图片/核心物项/3-夏日的2250kV工频试验成套装置（拍摄于1999年）.png",
         "dossier": "六、附件图片"
       },
-      "period": { "year": 1999, "label": "拍摄于 1999 年夏" },
+      "period": {
+        "year": 1999,
+        "label": "拍摄于 1999 年夏"
+      },
       "eventType": "operation",
-      "about": [{ "kind": "device", "id": "transformer" }],
-      "collectionIds": ["core-items"]
+      "about": [
+        {
+          "kind": "device",
+          "id": "transformer"
+        }
+      ],
+      "collectionIds": [
+        "core-items"
+      ]
     },
     {
       "id": "resource-2250kv-overview-2025",
@@ -441,47 +690,77 @@
         "path": "六、附件图片/核心物项/3-2250kV工频试验变压器全貌 (2025年).jpg",
         "dossier": "六、附件图片"
       },
-      "period": { "year": 2025, "label": "拍摄于 2025 年" },
+      "period": {
+        "year": 2025,
+        "label": "拍摄于 2025 年"
+      },
       "eventType": "operation",
-      "about": [{ "kind": "device", "id": "transformer" }],
-      "collectionIds": ["core-items"]
+      "about": [
+        {
+          "kind": "device",
+          "id": "transformer"
+        }
+      ],
+      "collectionIds": [
+        "core-items"
+      ]
     },
     {
       "id": "resource-drawings-2250kv",
       "title": "2250kV 工频试验装置图纸（历史档案）",
       "kind": "pdf",
       "url": "content/doc-2250kv-drawings-v20260922.pdf",
-      "extent": { "pages": 56 },
+      "extent": {
+        "pages": 56
+      },
       "description": "成套装置的历史图纸档案。",
       "source": {
         "path": "六、附件图片/其他证明材料/3.历史档案-2250kV工频试验装置图纸.pdf",
         "dossier": "六、附件图片"
       },
       "eventType": "archive",
-      "about": [{ "kind": "device", "id": "transformer" }],
-      "collectionIds": ["archives"]
+      "about": [
+        {
+          "kind": "device",
+          "id": "transformer"
+        }
+      ],
+      "collectionIds": [
+        "archives"
+      ]
     },
     {
       "id": "resource-install-report",
       "title": "工频试验变压器安装总结（历史档案）",
       "kind": "pdf",
       "url": "content/doc-install-report-v20260922.pdf",
-      "extent": { "pages": 17 },
+      "extent": {
+        "pages": 17
+      },
       "description": "当年的安装总结文档，记录了设备安装的技术要求与过程。",
       "source": {
         "path": "六、附件图片/其他证明材料/3.历史档案：工频试验变压器安装总结.pdf",
         "dossier": "六、附件图片"
       },
       "eventType": "archive",
-      "about": [{ "kind": "device", "id": "transformer" }],
-      "collectionIds": ["archives"]
+      "about": [
+        {
+          "kind": "device",
+          "id": "transformer"
+        }
+      ],
+      "collectionIds": [
+        "archives"
+      ]
     },
     {
       "id": "resource-2250kv-science-video",
       "title": "2250kV/9000kVA 工频试验成套装置科普视频",
       "kind": "video",
       "url": "content/video-2250kv-science-v20260922.mp4",
-      "extent": { "seconds": 247 },
+      "extent": {
+        "seconds": 247
+      },
       "poster": "content/video-2250kv-science-v20260922.jpg",
       "thumb": "content/thumbs/video-2250kv-science-v20260922.jpg",
       "description": "成套装置的科普短片：从设备构成到工频耐压试验的作用。",
@@ -490,8 +769,15 @@
         "dossier": "七、视频资料"
       },
       "eventType": "publicity",
-      "about": [{ "kind": "device", "id": "transformer" }],
-      "collectionIds": ["outreach"]
+      "about": [
+        {
+          "kind": "device",
+          "id": "transformer"
+        }
+      ],
+      "collectionIds": [
+        "outreach"
+      ]
     },
     {
       "id": "resource-award",
@@ -505,38 +791,72 @@
         "dossier": "六、附件图片"
       },
       "eventType": "honor",
-      "about": [{ "kind": "program" }, { "kind": "device", "id": "transformer" }],
-      "collectionIds": ["honors"]
+      "about": [
+        {
+          "kind": "program"
+        },
+        {
+          "kind": "device",
+          "id": "transformer"
+        }
+      ],
+      "collectionIds": [
+        "honors"
+      ]
     },
     {
       "id": "resource-heritage-notice",
       "title": "“共和国印记”见证物与工业遗产保护利用典型案例名单通知",
       "kind": "pdf",
       "url": "content/doc-heritage-notice-v20260922.pdf",
-      "extent": { "pages": 16 },
+      "extent": {
+        "pages": 16
+      },
       "description": "本装置入选“共和国印记”见证物与工业遗产保护利用典型案例的公布文件。",
       "source": {
         "path": "六、附件图片/其他证明材料/2.关于公布“共和国印记”见证物和工业遗产保护利用典型案例名单的通知.pdf",
         "dossier": "六、附件图片"
       },
       "eventType": "listing",
-      "about": [{ "kind": "program" }, { "kind": "device", "id": "transformer" }],
-      "collectionIds": ["honors"]
+      "about": [
+        {
+          "kind": "program"
+        },
+        {
+          "kind": "device",
+          "id": "transformer"
+        }
+      ],
+      "collectionIds": [
+        "honors"
+      ]
     },
     {
       "id": "resource-heritage-list",
       "title": "中电联电力工业遗产名录公布通知",
       "kind": "pdf",
       "url": "content/doc-heritage-list-v20260922.pdf",
-      "extent": { "pages": 3 },
+      "extent": {
+        "pages": 3
+      },
       "description": "中电联公布“赓续工业薪火 电亮精神之路”电力工业遗产名录的通知。",
       "source": {
         "path": "六、附件图片/其他证明材料/5.中电联关于公布“赓续工业薪火电亮精神之路”电力工业遗产名录的通知.pdf",
         "dossier": "六、附件图片"
       },
       "eventType": "listing",
-      "about": [{ "kind": "program" }, { "kind": "device", "id": "transformer" }],
-      "collectionIds": ["honors"]
+      "about": [
+        {
+          "kind": "program"
+        },
+        {
+          "kind": "device",
+          "id": "transformer"
+        }
+      ],
+      "collectionIds": [
+        "honors"
+      ]
     },
     {
       "id": "resource-outreach",
@@ -550,15 +870,27 @@
         "dossier": "六、附件图片"
       },
       "eventType": "outreach",
-      "about": [{ "kind": "program" }, { "kind": "device", "id": "transformer" }],
-      "collectionIds": ["outreach"]
+      "about": [
+        {
+          "kind": "program"
+        },
+        {
+          "kind": "device",
+          "id": "transformer"
+        }
+      ],
+      "collectionIds": [
+        "outreach"
+      ]
     },
     {
       "id": "resource-tiexin-play",
       "title": "《铁心光明》舞台剧",
       "kind": "video",
       "url": "content/video-tiexin-guangming-v20260922.mp4",
-      "extent": { "seconds": 544 },
+      "extent": {
+        "seconds": 544
+      },
       "poster": "content/video-tiexin-guangming-v20260922.jpg",
       "thumb": "content/thumbs/video-tiexin-guangming-v20260922.jpg",
       "description": "以这套装置的研制历程为背景创作的舞台剧影像。",
@@ -567,34 +899,81 @@
         "dossier": "七、视频资料"
       },
       "eventType": "publicity",
-      "about": [{ "kind": "program" }, { "kind": "device", "id": "transformer" }],
-      "collectionIds": ["outreach"]
+      "about": [
+        {
+          "kind": "program"
+        },
+        {
+          "kind": "device",
+          "id": "transformer"
+        }
+      ],
+      "collectionIds": [
+        "outreach"
+      ]
     }
   ],
   "eventTypes": [
-    { "id": "installation", "label": "安装" },
-    { "id": "operation", "label": "运行与现状" },
-    { "id": "archive", "label": "技术档案" },
-    { "id": "honor", "label": "荣誉" },
-    { "id": "listing", "label": "名录与认定" },
-    { "id": "outreach", "label": "科普活动" },
-    { "id": "publicity", "label": "宣传影像" }
+    {
+      "id": "installation",
+      "label": "安装"
+    },
+    {
+      "id": "operation",
+      "label": "运行与现状"
+    },
+    {
+      "id": "archive",
+      "label": "技术档案"
+    },
+    {
+      "id": "honor",
+      "label": "荣誉"
+    },
+    {
+      "id": "listing",
+      "label": "名录与认定"
+    },
+    {
+      "id": "outreach",
+      "label": "科普活动"
+    },
+    {
+      "id": "publicity",
+      "label": "宣传影像"
+    }
   ],
   "collections": [
-    { "id": "core-items", "label": "核心物项", "summary": "物项本体的历史影像：安装、运行与当前状态。" },
-    { "id": "archives", "label": "技术档案", "summary": "图纸、安装总结等原始技术文件。" },
-    { "id": "honors", "label": "荣誉与认定", "summary": "获奖证书与各级名录、认定文件。" },
-    { "id": "outreach", "label": "科普与传播", "summary": "科普活动、科普影片与文艺作品。" }
+    {
+      "id": "core-items",
+      "label": "核心物项",
+      "summary": "物项本体的历史影像：安装、运行与当前状态。"
+    },
+    {
+      "id": "archives",
+      "label": "技术档案",
+      "summary": "图纸、安装总结等原始技术文件。"
+    },
+    {
+      "id": "honors",
+      "label": "荣誉与认定",
+      "summary": "获奖证书与各级名录、认定文件。"
+    },
+    {
+      "id": "outreach",
+      "label": "科普与传播",
+      "summary": "科普活动、科普影片与文艺作品。"
+    }
   ],
   "siteModel": {
     "id": "wugao-field",
-    "name": "武高所库外试验场",
+    "name": "XXX所户外试验场",
     "summary": "",
     "poster": "content/model-wugao-site-v20260923.jpg",
     "source": {
       "kind": "gltf",
-        "url": "content/wugao-site-full-v20260923.glb"
-      },
+      "url": "content/wugao-site-full-v20260923.glb"
+    },
     "camera": {
       "position": [
         120,
@@ -609,6 +988,50 @@
       "minDistance": 6,
       "maxDistance": 900
     },
+    "placement": {
+      "anchor": {
+        "lng": 114.39669049026075,
+        "lat": 30.511968239379918
+      },
+      "headingDeg": -10,
+      "elevationM": 0,
+      "scale": 1
+    },
+    "ground": {
+      "zoom": 18,
+      "radius": 1,
+      "overlayOpacity": 1
+    },
+    "ortho": {
+      "image": "content/wugao-site-ortho-v20261015.webp",
+      "widthMeters": 406.06,
+      "heightMeters": 199.96,
+      "centerEast": -3.97,
+      "centerNorth": -5.57
+    },
+    "scope": {
+      "enabled": true,
+      "mask": {
+        "dim": 0.55,
+        "feather": 0.035,
+        "vignette": 0.4,
+        "outline": true
+      },
+      "glow": {
+        "strength": 1,
+        "pulse": true
+      },
+      "polygon": [
+          { "x": 0.19707, "y": 0.09612 },
+          { "x": 0.23932, "y": 0.06674 },
+          { "x": 1.064, "y": -0.19769 },
+          { "x": 1.17327, "y": 1.28017 },
+          { "x": 0.64874, "y": 1.47703 },
+          { "x": 0.59629, "y": 1.05688 },
+          { "x": 0.43165, "y": 1.1127 },
+          { "x": 0.26263, "y": 0.81889 }
+        ]
+    },
     "hotspots": [
       {
         "id": "hotspot-transformer",
@@ -622,7 +1045,8 @@
           0,
           6,
           0
-        ]
+        ],
+        "panoramaId": "wugao-720yun"
       },
       {
         "id": "hotspot-generator",
@@ -636,7 +1060,8 @@
           0,
           8,
           0
-        ]
+        ],
+        "panoramaId": "wugao-720yun"
       }
     ]
   }

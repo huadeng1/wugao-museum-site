@@ -3,22 +3,34 @@
   "sourcePrototype": "wugao-digital-museum",
   "assets": [
     {
+      "file": "transformer-2250kv-user-20261014.glb",
+      "type": "model",
+      "use": "设备模型·2250kV 工频试验变压器（当前）",
+      "note": "来自 model/2250kV工频实验变压器-compressed-basetoolbox.com.glb；保留全部 3792251 个三角面与 59 个命名网格，合并同材质图元并重新 Draco 打包：21760 → 312 个图元，30.26 → 12.54 MB。原文件未修改。"
+    },
+    {
+      "file": "generator-5400kv-user-20261014.glb",
+      "type": "model",
+      "use": "设备模型·5400kV 冲击电压发生器（当前）",
+      "note": "来自 model/5400kV冲击电压发生器-01-compressed-basetoolbox.com.glb；保留全部 2195879 个三角面与 14 个命名网格、拆解节点，合并同材质图元并重新 Draco 打包：19936 → 114 个图元，24.68 → 7.27 MB。原文件未修改。"
+    },
+    {
       "file": "transformer-2250kv-v20260922b.glb",
       "type": "model",
-      "use": "设备模型·2250kV 工频试验变压器",
+      "use": "归档旧模型·2250kV 工频试验变压器（不再引用）",
       "note": "院方交付的真实模型：2250kV工频实验变压器.FBX（122 MB，379 万面）经 Blender 抽稀到 14%（52 万面），再用 scripts/optimize-glb.mjs 清掉未使用的顶点属性（TEXCOORD_1/2：各 30 万个顶点）、dedup + join 合并材质（303 → 26）、WebP 贴图重编码与 Draco 压缩；8.87 MB → 5.53 MB，节点保持原名（本次无语义部件名，整机查看）"
     },
     {
       "file": "generator-5400kv-v20260922b.glb",
       "type": "model",
-      "use": "设备模型·5400kV 冲击电压发生器",
+      "use": "归档旧模型·5400kV 冲击电压发生器（不再引用）",
       "note": "院方交付的真实模型：5400kV冲击电压发生器-01.FBX（74 MB，220 万面）经 Blender 抽稀到 18%（39.5 万面），再用 scripts/optimize-glb.mjs 合并材质（111 → 18）+ WebP + Draco；4.19 MB → 2.81 MB；保留 1F~10F 与 WK 节点名用于拆解"
     },
     {
       "file": "wugao-site-full-v20260923.glb",
       "type": "model",
-      "use": "设备模型入口·武高所库外试验场高细节版",
-      "note": "院方交付的武高所库外试验场.FBX：1450 个源对象合并成 6 个命名网格、363 个图元，约 910.6 万三角面，不做几何抽稀；清理未用 UV 与顶点色并以 Draco 压缩。264 张 JPEG 用 app/scripts/repack-glb-jpegs.mjs 按质量 90 重编码，46 张 PNG、全部贴图尺寸和几何压缩数据保持原样；137.6 MB → 87.5 MB。小米 17 Pro 真机单页测试从约 9.2–10.2 秒缩至约 8.2 秒可见。"
+      "use": "设备模型入口·XXX所户外试验场高细节版",
+      "note": "院方交付的XXX所户外试验场.FBX：1450 个源对象合并成 6 个命名网格、363 个图元，约 910.6 万三角面，不做几何抽稀；清理未用 UV 与顶点色并以 Draco 压缩。264 张 JPEG 用 app/scripts/repack-glb-jpegs.mjs 按质量 90 重编码，46 张 PNG、全部贴图尺寸和几何压缩数据保持原样；137.6 MB → 87.5 MB。小米 17 Pro 真机单页测试从约 9.2–10.2 秒缩至约 8.2 秒可见。"
     },
     {
       "file": "model-wugao-site-v20260923.jpg",
