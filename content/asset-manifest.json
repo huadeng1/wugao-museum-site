@@ -15,18 +15,6 @@
       "note": "来自 model/5400kV冲击电压发生器-01-compressed-basetoolbox.com.glb；保留全部 2195879 个三角面与 14 个命名网格、拆解节点，合并同材质图元并重新 Draco 打包：19936 → 114 个图元，24.68 → 7.27 MB。原文件未修改。"
     },
     {
-      "file": "transformer-2250kv-v20260922b.glb",
-      "type": "model",
-      "use": "归档旧模型·2250kV 工频试验变压器（不再引用）",
-      "note": "院方交付的真实模型：2250kV工频实验变压器.FBX（122 MB，379 万面）经 Blender 抽稀到 14%（52 万面），再用 scripts/optimize-glb.mjs 清掉未使用的顶点属性（TEXCOORD_1/2：各 30 万个顶点）、dedup + join 合并材质（303 → 26）、WebP 贴图重编码与 Draco 压缩；8.87 MB → 5.53 MB，节点保持原名（本次无语义部件名，整机查看）"
-    },
-    {
-      "file": "generator-5400kv-v20260922b.glb",
-      "type": "model",
-      "use": "归档旧模型·5400kV 冲击电压发生器（不再引用）",
-      "note": "院方交付的真实模型：5400kV冲击电压发生器-01.FBX（74 MB，220 万面）经 Blender 抽稀到 18%（39.5 万面），再用 scripts/optimize-glb.mjs 合并材质（111 → 18）+ WebP + Draco；4.19 MB → 2.81 MB；保留 1F~10F 与 WK 节点名用于拆解"
-    },
-    {
       "file": "wugao-site-full-v20260923.glb",
       "type": "model",
       "use": "设备模型入口·XXX所户外试验场高细节版",
