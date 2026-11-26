@@ -80,7 +80,7 @@
       "poster": "content/image-2250kv-overview-2025-v20260922.jpg",
       "source": {
         "kind": "gltf",
-        "url": "content/transformer-2250kv-user-20261014.glb"
+        "url": "content/transformer-2250kv-user-20261125b.glb"
       },
       "camera": {
         "position": [
@@ -97,198 +97,8 @@
         "maxDistance": 220
       },
       "parts": [],
-      "hotspots": [
-        {
-          "id": "t2250-bushing",
-          "label": "高压出线套管",
-          "body": "从器身顶部引出 2250 kV 高压的通道。瓷套外壁的伞裙一级级张开，把沿表面的爬电距离拉长；内里是一根导电杆，直通上方的均压环。",
-          "position": [
-            -5.14,
-            14.2,
-            3.29
-          ],
-          "facts": [
-            {
-              "label": "额定电压",
-              "value": "2250 kV"
-            },
-            {
-              "label": "绝缘",
-              "value": "瓷套 + 变压器油"
-            }
-          ],
-          "resourceIds": [
-            "resource-2250kv-science-video",
-            "resource-drawings-2250kv"
-          ],
-          "source": "literature"
-        },
-        {
-          "id": "t2250-ring",
-          "label": "顶部均压环",
-          "body": "直径远大于导电杆的金属圆环，作用是把顶端的电场\"摊平\"。尖角处电场集中、容易起晕，套上一圈大环，电荷重新分布，两百万伏也能安静运行。",
-          "position": [
-            -1.88,
-            15.9,
-            3.38
-          ],
-          "facts": [
-            {
-              "label": "作用",
-              "value": "均压、抑制电晕"
-            },
-            {
-              "label": "形状",
-              "value": "大直径金属环"
-            }
-          ],
-          "resourceIds": [
-            "resource-2250kv-science-video"
-          ],
-          "source": "estimate"
-        },
-        {
-          "id": "t2250-core",
-          "label": "器身与铁心",
-          "body": "铁心由 0.35 mm 厚的冷轧硅钢片一片片叠成，外面套着高低压绕组。通电后磁通在铁心里闭合，把电压抬到 2250 kV；整个器身浸在变压器油里散热、绝缘。",
-          "position": [
-            0.1,
-            5.86,
-            11.91
-          ],
-          "facts": [
-            {
-              "label": "容量",
-              "value": "9000 kVA"
-            },
-            {
-              "label": "硅钢片厚",
-              "value": "0.35 mm"
-            }
-          ],
-          "resourceIds": [
-            "resource-drawings-2250kv",
-            "resource-install-report"
-          ],
-          "source": "literature"
-        },
-        {
-          "id": "t2250-divider",
-          "label": "电容分压器",
-          "body": "2250 kV 没法直接接表，只能按比例缩小。这一串电容把高压均匀分掉，末端的低压信号送进测量系统，读数才落在仪表能承受的范围里。",
-          "position": [
-            3.35,
-            8.75,
-            -10.26
-          ],
-          "facts": [
-            {
-              "label": "用途",
-              "value": "电压测量"
-            },
-            {
-              "label": "方式",
-              "value": "电容串联分压"
-            }
-          ],
-          "resourceIds": [
-            "resource-install-report"
-          ],
-          "source": "estimate"
-        },
-        {
-          "id": "t2250-support",
-          "label": "支柱绝缘子",
-          "body": "托住均压环和电极的\"腿\"。它既要扛起十几米高的金属件，又要在高压与地之间挡住电流，所以做成带伞裙的绝缘柱。",
-          "position": [
-            -4.93,
-            3.48,
-            11.17
-          ],
-          "facts": [
-            {
-              "label": "功能",
-              "value": "支撑 + 绝缘"
-            },
-            {
-              "label": "材料",
-              "value": "瓷或复合绝缘"
-            }
-          ],
-          "resourceIds": [],
-          "source": "estimate"
-        },
-        {
-          "id": "t2250-base",
-          "label": "底座与油箱",
-          "body": "整套器身坐在一只大油箱上。油既绝缘又带走热量，箱壁的散热片让油循环起来。1981 年安装完成时，这套装置是我国自行设计制造的 2250 kV 工频试验装备。",
-          "position": [
-            2.88,
-            4.68,
-            10.96
-          ],
-          "facts": [
-            {
-              "label": "投运",
-              "value": "1981 年"
-            },
-            {
-              "label": "油箱",
-              "value": "器身浸油、自然循环"
-            }
-          ],
-          "resourceIds": [
-            "resource-2250kv-installed-1981",
-            "resource-2250kv-overview-2025"
-          ],
-          "source": "literature"
-        },
-        {
-          "id": "t2250-ground",
-          "label": "接地与基础",
-          "body": "高压试验里，\"地\"和高压一样重要。基础里的接地网把试验电流迅速导走，让设备外壳、操作台和人都站在同一个电位上。",
-          "position": [
-            2.37,
-            0.76,
-            0.67
-          ],
-          "facts": [
-            {
-              "label": "作用",
-              "value": "泄流、等电位"
-            },
-            {
-              "label": "要点",
-              "value": "接地可靠、走线短直"
-            }
-          ],
-          "resourceIds": [],
-          "source": "estimate"
-        },
-        {
-          "id": "t2250-busbar",
-          "label": "高压引线与母线",
-          "body": "从套管出发接到试品的那一段导线。它整段都处在 2250 kV 上，走向和长度要按电场分布算好，避免对旁边的构架放电。",
-          "position": [
-            1.09,
-            7.39,
-            -7.04
-          ],
-          "facts": [
-            {
-              "label": "电压",
-              "value": "2250 kV"
-            },
-            {
-              "label": "走向",
-              "value": "套管 → 试品区"
-            }
-          ],
-          "resourceIds": [
-            "resource-drawings-2250kv"
-          ],
-          "source": "estimate"
-        }
+      "focusNodeNames": [
+        "2250kV工频实验变压器"
       ]
     },
     {
@@ -298,7 +108,7 @@
       "poster": "content/model-generator-5400kv-v20260922.jpg",
       "source": {
         "kind": "gltf",
-        "url": "content/generator-5400kv-user-20261014.glb"
+        "url": "content/generator-5400kv-user-20261125b.glb"
       },
       "camera": {
         "position": [
@@ -318,7 +128,7 @@
         "mode": "grouped",
         "order": "outside-in",
         "duration": 9,
-        "layout": "none",
+        "layout": "columns",
         "overlap": 2.4
       },
       "parts": [
@@ -972,13 +782,13 @@
     "poster": "content/model-wugao-site-v20260923.jpg",
     "source": {
       "kind": "gltf",
-      "url": "content/wugao-site-full-v20260923.glb"
+      "url": "content/wugao-site-full-v20261125b.glb"
     },
     "camera": {
       "position": [
-        120,
+        -120,
         90,
-        170
+        -170
       ],
       "target": [
         0,
